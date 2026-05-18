@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CityHospital – Book Appointments Online</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<nav class="navbar">
+    <a href="#home" class="logo"><span>🏥</span>CityHospital</a>
+    <div class="nav-links" id="nav-links"></div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HOME PAGE
+════════════════════════════════════════ -->
+<div id="page-home" class="page">
+    <div class="container">
+        <div class="hero">
+            <h1>Your Health, Our Priority</h1>
+            <p>Book appointments with top specialists in minutes. Fast, simple, and reliable.</p>
+            <a href="#doctors" class="btn btn-white">Find a Doctor &rarr;</a>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:36px">
+            <div class="card" style="text-align:center">
+                <div style="font-size:2rem;color:#0077b6;font-weight:700">50+</div>
+                <p style="color:#666">Expert Doctors</p>
+            </div>
+            <div class="card" style="text-align:center">
+                <div style="font-size:2rem;color:#0077b6;font-weight:700">1000+</div>
+                <p style="color:#666">Appointments Booked</p>
+            </div>
+            <div class="card" style="text-align:center">
+                <div style="font-size:2rem;color:#0077b6;font-weight:700">8</div>
+                <p style="color:#666">Specialties</p>
+            </div>
+        </div>
+
+        <h2 style="margin-bottom:18px">Browse by Specialty</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:36px">
+            <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:2rem;margin-bottom:8px">❤️</div><p style="font-weight:600">Cardiology</p>
+            </a>
+            <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:2rem;margin-bottom:8px">🧴</div><p style="font-weight:600">Dermatology</p>
+            </a>
+            <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:2rem;margin-bottom:8px">🦴</div><p style="font-weight:600">Orthopedics</p>
+            </a>
+            <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:2rem;margin-bottom:8px">👶</div><p style="font-weight:600">Pediatrics</p>
+            </a>
+            <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:2rem;margin-bottom:8px">🧠</div><p style="font-weight:600">Neurology</p>
+            </a>
+            <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:2rem;margin-bottom:8px">🧘</div><p style="font-weight:600">Psychiatry</p>
+            </a>
+            <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:2rem;margin-bottom:8px">🩺</div><p style="font-weight:600">General</p>
+            </a>
+            <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                <div style="font-size:2rem;margin-bottom:8px">🔬</div><p style="font-weight:600">Radiology</p>
+            </a>
+        </div>
+
+        <div class="card" style="text-align:center;background:linear-gradient(135deg,#e0f2fe,#bae6fd)">
+            <h3 style="margin-bottom:10px">Ready to get started?</h3>
+            <p style="color:#555;margin-bottom:18px">Create a free account and book your first appointment today.</p>
+            <a href="#register" class="btn btn-primary">Create Free Account</a>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     LOGIN PAGE
+════════════════════════════════════════ -->
+<div id="page-login" class="page">
+    <div class="container">
+        <div style="max-width:420px;margin:0 auto">
+            <div class="card">
+                <h2 style="margin-bottom:6px;color:#0077b6">Welcome Back 👋</h2>
+                <p style="color:#666;margin-bottom:22px">Login to manage your appointments</p>
+                <div id="login-alert" class="alert" style="display:none"></div>
+                <form onsubmit="doLogin(event)">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input id="login-email" type="email" placeholder="you@example.com" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input id="login-password" type="password" placeholder="••••••••" required/>
+                    </div>
+                    <button id="login-btn" type="submit" class="btn btn-primary" style="width:100%;margin-top:8px">Login</button>
+                </form>
+                <p style="text-align:center;margin-top:18px;color:#666">
+                    Don't have an account? <a href="#register" style="color:#0077b6;font-weight:600">Register</a>
+                </p>
+                <div style="background:#f0f7ff;border-radius:8px;padding:12px;margin-top:14px;font-size:0.85rem;color:#555">
+                    <strong>Admin:</strong> admin@hospital.com / admin123
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     REGISTER PAGE
+════════════════════════════════════════ -->
+<div id="page-register" class="page">
+    <div class="container">
+        <div style="max-width:520px;margin:0 auto">
+            <div class="card">
+                <h2 style="margin-bottom:6px;color:#0077b6">Create Account 🏥</h2>
+                <p style="color:#666;margin-bottom:22px">Join CityHospital to book appointments</p>
+                <div id="reg-alert" class="alert" style="display:none"></div>
+                <form onsubmit="doRegister(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input id="reg-name" placeholder="John Doe" required/>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input id="reg-phone" placeholder="9876543210" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input id="reg-email" type="email" placeholder="you@example.com" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input id="reg-password" type="password" placeholder="Min. 6 characters" required minlength="6"/>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select id="reg-gender">
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input id="reg-dob" type="date"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input id="reg-address" placeholder="Your address"/>
+                    </div>
+                    <button id="reg-btn" type="submit" class="btn btn-primary" style="width:100%;margin-top:8px">Register</button>
+                </form>
+                <p style="text-align:center;margin-top:18px;color:#666">
+                    Already have an account? <a href="#login" style="color:#0077b6;font-weight:600">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     DOCTORS PAGE
+════════════════════════════════════════ -->
+<div id="page-doctors" class="page">
+    <div class="container">
+        <h2 style="margin-bottom:6px">Our Doctors</h2>
+        <p style="color:#666;margin-bottom:20px">Book an appointment with our experienced specialists</p>
+
+        <div class="search-bar">
+            <input id="doctor-search" placeholder="Search by doctor name..." onkeyup="searchDoctors(event)"/>
+            <button class="btn btn-primary" onclick="searchDoctors({type:'click'})">Search</button>
+        </div>
+
+        <div class="filter-pills">
+            <button class="pill active" data-specialty="All"          onclick="filterSpecialty(this,'All')">All</button>
+            <button class="pill"        data-specialty="Cardiology"   onclick="filterSpecialty(this,'Cardiology')">Cardiology</button>
+            <button class="pill"        data-specialty="Dermatology"  onclick="filterSpecialty(this,'Dermatology')">Dermatology</button>
+            <button class="pill"        data-specialty="General"      onclick="filterSpecialty(this,'General')">General</button>
+            <button class="pill"        data-specialty="Neurology"    onclick="filterSpecialty(this,'Neurology')">Neurology</button>
+            <button class="pill"        data-specialty="Orthopedics"  onclick="filterSpecialty(this,'Orthopedics')">Orthopedics</button>
+            <button class="pill"        data-specialty="Pediatrics"   onclick="filterSpecialty(this,'Pediatrics')">Pediatrics</button>
+            <button class="pill"        data-specialty="Psychiatry"   onclick="filterSpecialty(this,'Psychiatry')">Psychiatry</button>
+            <button class="pill"        data-specialty="Radiology"    onclick="filterSpecialty(this,'Radiology')">Radiology</button>
+        </div>
+
+        <div id="doctors-grid" class="doctors-grid"></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     DOCTOR DETAIL PAGE
+════════════════════════════════════════ -->
+<div id="page-doctor-detail" class="page">
+    <div class="container">
+        <div style="margin-bottom:16px">
+            <a href="#doctors" style="color:#0077b6;text-decoration:none;font-weight:600">← Back to Doctors</a>
+        </div>
+        <div id="detail-content"></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     MY APPOINTMENTS PAGE
+════════════════════════════════════════ -->
+<div id="page-my-appointments" class="page">
+    <div class="container">
+        <h2 style="margin-bottom:6px">My Appointments</h2>
+        <p style="color:#666;margin-bottom:20px">Manage all your hospital appointments</p>
+        <div class="tabs">
+            <button class="tab active" data-filter="all"       onclick="renderMyAppointments('all')">All</button>
+            <button class="tab"        data-filter="confirmed" onclick="renderMyAppointments('confirmed')">Confirmed</button>
+            <button class="tab"        data-filter="completed" onclick="renderMyAppointments('completed')">Completed</button>
+            <button class="tab"        data-filter="cancelled" onclick="renderMyAppointments('cancelled')">Cancelled</button>
+        </div>
+        <div id="apt-list"></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     PROFILE PAGE
+════════════════════════════════════════ -->
+<div id="page-profile" class="page">
+    <div class="container">
+        <div style="max-width:600px;margin:0 auto">
+            <h2 style="margin-bottom:6px">My Profile</h2>
+            <p style="color:#666;margin-bottom:20px">Update your personal information</p>
+            <div class="card">
+                <div style="display:flex;gap:16px;align-items:center;margin-bottom:24px;padding:16px;background:#f0f7ff;border-radius:10px">
+                    <div class="doctor-avatar-lg" id="p-avatar" style="background:#0077b6"></div>
+                    <div>
+                        <h3 id="p-name-display"></h3>
+                        <p id="p-email-display" style="color:#666"></p>
+                        <span id="p-role-display" class="badge badge-confirmed" style="margin-top:4px"></span>
+                    </div>
+                </div>
+                <div id="profile-alert" class="alert" style="display:none"></div>
+                <form onsubmit="saveProfile(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input id="p-name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input id="p-phone" required/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select id="p-gender">
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input id="p-dob" type="date"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input id="p-address"/>
+                    </div>
+                    <button id="profile-btn" type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     ADMIN PAGE
+════════════════════════════════════════ -->
+<div id="page-admin" class="page">
+    <div class="container">
+        <h2 style="margin-bottom:6px">Admin Dashboard 🛠</h2>
+        <p style="color:#666;margin-bottom:20px">Hospital management overview</p>
+        <div class="tabs">
+            <button class="tab active" data-tab="overview"     onclick="loadAdminTab('overview')">Overview</button>
+            <button class="tab"        data-tab="appointments" onclick="loadAdminTab('appointments')">Appointments</button>
+            <button class="tab"        data-tab="patients"     onclick="loadAdminTab('patients')">Patients</button>
+        </div>
+        <div id="admin-body"></div>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
