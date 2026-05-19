@@ -16,32 +16,32 @@ async function api(method, path, body) {
 
 const API = {
     // Auth
-    login:    (email, password) => api('POST', '/hospital/api/auth/login',    { email, password }),
-    register: (body)            => api('POST', '/hospital/api/auth/register',  body),
-    logout:   ()                => api('POST', '/hospital/api/auth/logout'),
-    me:       ()                => api('GET',  '/hospital/api/auth/logout'),   // GET on same servlet
+    login:    (email, password) => api('POST', '/api/auth/login',    { email, password }),
+register: (body)            => api('POST', '/api/auth/register',  body),
+logout:   ()                => api('POST', '/api/auth/logout'),
+me:       ()                => api('GET',  '/api/auth/logout'),
 
     // Doctors
     getDoctors: (specialty, search) => {
         let qs = '?';
         if (specialty) qs += `specialty=${encodeURIComponent(specialty)}&`;
         if (search)    qs += `search=${encodeURIComponent(search)}&`;
-        return api('GET', '/hospital/api/doctors' + qs);
+        return api('GET', '/api/doctors' + qs);
     },
-    getDoctor:  (id) => api('GET', `/hospital/api/doctors/${id}`),
+    getDoctor:  (id) => api('GET', `/api/doctors/${id}`),
 
     // Appointments
-    book:           (body)          => api('POST', '/hospital/api/appointments',                body),
-    myAppointments: ()              => api('GET',  '/hospital/api/appointments/my'),
-    cancel:         (id)            => api('PUT',  `/hospital/api/appointments/${id}/cancel`),
+    book:           (body)          => api('POST', '/api/appointments',                body),
+    myAppointments: ()              => api('GET',  '/api/appointments/my'),
+    cancel:         (id)            => api('PUT',  `/api/appointments/${id}/cancel`),
 
     // Admin
-    allAppointments: ()             => api('GET', '/hospital/api/admin/appointments'),
-    allUsers:        ()             => api('GET', '/hospital/api/admin/users'),
+    allAppointments: ()             => api('GET', '/api/admin/appointments'),
+    allUsers:        ()             => api('GET', '/api/admin/users'),
     updateStatus: (id, status, notes, prescription) =>
-        api('PUT', `/hospital/api/admin/appointments/${id}`, { status, notes, prescription }),
+        api('PUT', `/api/admin/appointments/${id}`, { status, notes, prescription }),
 
     // Profile
-    getProfile:    ()    => api('GET', '/hospital/api/users/profile'),
-    updateProfile: (body)=> api('PUT', '/hospital/api/users/profile', body),
+    getProfile:    ()    => api('GET', '/api/users/profile'),
+    updateProfile: (body)=> api('PUT', '/api/users/profile', body),
 };
