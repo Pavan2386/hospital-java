@@ -110,7 +110,7 @@ public class SeedServlet extends HttpServlet {
         st.execute("CREATE TABLE IF NOT EXISTS doctors (" +
             "id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, " +
             "email VARCHAR(100) NOT NULL UNIQUE, " +
-            "specialty ENUM('Cardiology','Dermatology','General','Neurology','Orthopedics','Pediatrics','Psychiatry','Radiology') NOT NULL, " +
+            "specialty ENUM('Cardiology','Dermatology','General','Neurology','Orthopedics','Pediatrics','Psychiatry','Radiology','Dentistry','Gynecology','ENT','Ophthalmology') NOT NULL, " +
             "qualification VARCHAR(150) NOT NULL, experience INT NOT NULL, " +
             "phone VARCHAR(20), bio TEXT, consultation_fee DECIMAL(10,2) NOT NULL, " +
             "rating FLOAT DEFAULT 4.0, is_active TINYINT(1) DEFAULT 1, " +

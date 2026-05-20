@@ -68,6 +68,12 @@
             <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
                 <div style="font-size:2rem;margin-bottom:8px">🔬</div><p style="font-weight:600">Radiology</p>
             </a>
+	    <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s">
+    <div style="font-size:2rem;margin-bottom:8px">🦷</div><p style="font-weight:600">Dentistry</p>
+	   </a>
+	   <a href="#doctors" class="card" style="text-align:center;cursor:pointer;text-decoration:none;color:inherit;transition:transform 0.2s">
+    <div style="font-size:2rem;margin-bottom:8px">👁️</div><p style="font-weight:600">Ophthalmology</p>
+	  </a>
         </div>
 
         <div class="card" style="text-align:center;background:linear-gradient(135deg,#e0f2fe,#bae6fd)">
@@ -191,6 +197,11 @@
             <button class="pill"        data-specialty="Pediatrics"   onclick="filterSpecialty(this,'Pediatrics')">Pediatrics</button>
             <button class="pill"        data-specialty="Psychiatry"   onclick="filterSpecialty(this,'Psychiatry')">Psychiatry</button>
             <button class="pill"        data-specialty="Radiology"    onclick="filterSpecialty(this,'Radiology')">Radiology</button>
+	    <button class="pill" 	data-specialty="Dentistry"    onclick="filterSpecialty(this,'Dentistry')">Dentistry</button>
+	    <button class="pill" 	data-specialty="Gynecology"   onclick="filterSpecialty(this,'Gynecology')">Gynecology</button>
+	    <button class="pill" 	data-specialty="ENT"          onclick="filterSpecialty(this,'ENT')">
+ENT</button>
+	    <button class="pill" 	data-specialty="Ophthalmology" onclick="filterSpecialty(this,'Ophthalmology')">Ophthalmology</button>
         </div>
 
         <div id="doctors-grid" class="doctors-grid"></div>
