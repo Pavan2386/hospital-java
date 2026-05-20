@@ -52,7 +52,7 @@ public class SeedServlet extends HttpServlet {
                 {"Meena Reddy", "meena@hospital.com",  "Pediatrics",  "MBBS, MD (Pediatrics)",  "10","9876500004","Compassionate pediatrician specializing in child development.","500","4.9"},
                 {"Suresh Patel","suresh@hospital.com", "General",     "MBBS, MD (General)",     "6", "9876500005","General health and preventive care specialist.","400","4.5"},
                 {"Kavya Sharma","kavya@hospital.com",  "Neurology",   "MBBS, DM (Neurology)",   "9", "9876500006","Expert in neurological disorders and stroke management.","750","4.6"},
-                {"Meera Rao", "meera@hospital.com", "Gynecology", "MBBS, MD (Gynecology)", "12", "9876500021", "Specialist in pregnancy care, PCOS, and women’s health.", "900", "4.7"},
+                {"Meera Rao", "meera@hospital.com", "Gynecology", "MBBS, MD (Gynecology)", "12", "9876500021", "Specialist in pregnancy care, PCOS, and women's health.", "900", "4.7"},
                 {"Arun Varma", "arun@hospital.com", "ENT", "MBBS, MS (ENT)", "8", "9876500022", "Expert in ear infections, sinus issues, and throat disorders.", "600", "4.5"},
             };
 
