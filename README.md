@@ -48,10 +48,3 @@
 | GET | /api/admin/appointments | All (Admin) |
 | GET | /api/admin/users | All patients (Admin) |
 
-## Syllabus Coverage
-| Exercise | Feature |
-|----------|---------|
-| Ex. 5 | JDBC + MySQL CRUD |
-| Ex. 7 | Servlet + Database integration |
-| Ex. 8 | HTTP Sessions + Cookies |
-| Ex. 1-2 | HTML + CSS + JavaScript frontend |
