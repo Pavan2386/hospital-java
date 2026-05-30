@@ -1,4 +1,6 @@
-const BASE = window.location.hostname === 'localhost' ? '/hospital' : '';
+const isLocal = window.location.hostname === 'localhost';
+const isNgrok = window.location.hostname.includes('ngrok');
+const BASE = (isLocal || isNgrok) ? '/hospital' : '';
 
 async function api(method, path, body) {
     const opts = {
